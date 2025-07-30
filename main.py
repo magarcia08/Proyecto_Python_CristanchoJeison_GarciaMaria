@@ -1,0 +1,126 @@
+"""
+Autores: Maria Alejandra Garcia y Jeison Cristanco
+Fecha: 29 de julio de 2025
+Descripción: Este es el archivo principal que ejecuta el programa de gestión de colección.
+Este programa permite a los administradores añadir, ver, buscar, editar y eliminar elementos
+de una colección de libros, películas y música.
+El menú principal ofrece opciones para gestionar la colección de manera eficiente.
+
+"""
+
+import utils.screenControlers as sc
+from controllers import agregarElemento, verElementos, buscarElementos, editarElemento
+
+def menuAdministrador():                                      
+    while True:                                                   # Menú Principal
+        sc.limpiarPantalla()
+        print("========================================")
+        print("      Administrador de Colección ")
+        print("========================================")
+        print("1. Añadir un Nuevo Elemento")
+        print("2. Ver Todos los Elementos")
+        print("3. Buscar un Elemento")
+        print("4. Editar un Elemento")
+        print("5. Eliminar un Elemento")
+        print("6. Ver Elementos por Categoría")
+        print("7. Guardar y Cargar Colección")
+        print("0. Salir")
+        print("========================================")
+        opcion = input("Elija una opción: ").strip()
+        match opcion:
+            
+            case "1":                                                # Menú de Opciones - Añadir un Nuevo Elemento
+                agregarElemento.agregarElemento()
+            case "2":                                                # Menú de Opciones - Ver Todos los Elementos
+                verElementos.verElementos()
+            case "3":
+                buscarElementos.buscarElemento()            # Menú de Opciones - Buscar un Elemento
+            case "4":
+                editarElemento.editarElemento()            # Menú de Opciones - Editar un Elemento
+            case "5":                                                 # Menú de Opciones - Eliminar un Elemento
+                while True:
+                    sc.limpiarPantalla()
+                    print("========================================")
+                    print("       Eliminar un Elemento ")
+                    print("========================================")
+                    print("1. Eliminar por Título")
+                    print("2. Eliminar por Identificador Único")
+                    print("0. Regresar al menú principal")
+                    print("========================================")
+                    elimOpcion = input("Seleccione una opción: ")
+
+                    match elimOpcion:
+                        case "1":
+                            pass
+                        case "2":
+                            pass
+                        case "0":
+                            break
+                        case _:
+                            print("Opcion invalida.")        
+                        
+                    input("Presione para continuar. . . . ")    
+            
+            case "6":                                                  # Menú de Opciones - Ver Elementos por Categoría
+                 while True:
+                    sc.limpiarPantalla()
+                    print("========================================")
+                    print("       Ver Elementos por Categoría ")
+                    print("========================================")
+                    print("¿Qué categoría deseas ver?")
+                    print("1. Ver Libros")
+                    print("2. Ver Películas")
+                    print("3. Ver Música")
+                    print("0. Regresar al menú principal")
+                    print("========================================")
+                    vereleOpcion = input("Seleccione una opción: ")
+
+                    match vereleOpcion:
+                        case "1":
+                            pass
+                        case "2":
+                            pass
+                        case "3":
+                            pass
+                        case "0":
+                            break
+                        case _:
+                            print("Opcion invalida.")        
+                        
+                    input("Presione para continuar. . . . ") 
+
+            case "7":                                            #Menú de Opciones - Guardar y Cargar Colección
+                while True:
+                    sc.limpiarPantalla()
+                    print("========================================")
+                    print("        Guardar y Cargar Colección ")
+                    print("========================================")
+                    print("¿Qué deseas hacer?")
+                    print("1. Guardar la Colección Actual")
+                    print("2. Cargar una Colección Guardada")
+                    print("0. Regresar al menú principal")
+                    print("========================================")
+                    guardOpcion = input("Seleccione una opción: ")
+
+                    match guardOpcion:
+                        case "1":
+                            pass
+                        case "2":
+                            pass
+                        case "0":
+                            break
+                        case _:
+                            print("Opcion invalida.")        
+                        
+                    input("Presione para continuar. . . . ")  
+
+            case "0":
+                print("Saliendo del programa")
+                break
+            case _:
+                print("Opción inválida")
+
+        sc.pausar_pantalla       #pausa
+
+if __name__ == "__main__":
+    menuAdministrador()
