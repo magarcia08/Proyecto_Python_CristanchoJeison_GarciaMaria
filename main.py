@@ -9,7 +9,7 @@ El menú principal ofrece opciones para gestionar la colección de manera eficie
 """
 
 import utils.screenControlers as sc
-from controllers import agregarElemento, verElementos, buscarElementos, editarElemento
+from controllers import agregarElemento, verElementos, buscarElementos, editarElemento,eliminarElemento
 
 def menuAdministrador():                                      
     while True:                                                   # Menú Principal
@@ -38,29 +38,7 @@ def menuAdministrador():
             case "4":
                 editarElemento.editarElemento()            # Menú de Opciones - Editar un Elemento
             case "5":                                                 # Menú de Opciones - Eliminar un Elemento
-                while True:
-                    sc.limpiarPantalla()
-                    print("========================================")
-                    print("       Eliminar un Elemento ")
-                    print("========================================")
-                    print("1. Eliminar por Título")
-                    print("2. Eliminar por Identificador Único")
-                    print("0. Regresar al menú principal")
-                    print("========================================")
-                    elimOpcion = input("Seleccione una opción: ")
-
-                    match elimOpcion:
-                        case "1":
-                            pass
-                        case "2":
-                            pass
-                        case "0":
-                            break
-                        case _:
-                            print("Opcion invalida.")        
-                        
-                    input("Presione para continuar. . . . ")    
-            
+                eliminarElemento.eliminarElemento()        # Llama a la función para eliminar un elemento
             case "6":                                                  # Menú de Opciones - Ver Elementos por Categoría
                  while True:
                     sc.limpiarPantalla()
