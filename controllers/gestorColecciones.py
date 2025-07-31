@@ -3,6 +3,7 @@ from utils.corefiles import readJson, writeJson
 from app.config import AGREGARELEMENTO
 import utils.screenControlers as sc
 
+
 def gestoresColeccion():
     while True:
         sc.limpiarPantalla()
@@ -50,12 +51,13 @@ def guardarColeccion():                                       #Guardar coleccion
         print("Colección principal vaciada.")
     except Exception as e:
         print(f"Error al vaciar la colección principal: {e}")
-    input("Presione Enter para continuar...")  # Pausa para que el usuario vea el mensaje
-    os.system('cls' if os.name == 'nt' else 'clear')  # Limpia la pantalla
+    sc.pausar_pantalla  # Pausa para que el usuario vea el mensaje
+    sc.limpiarPantalla  # Limpia la pantalla
     print("Colección guardada y vaciada correctamente.")
 
     #para cargar una coleccion
 def cargarColeccion():
+    sc.limpiarPantalla
     print("\n= Cargar una Colección ")
     nombre = input("Ingresa el nombre del archivo a cargar (sin .json): ").strip()
     if not nombre:
@@ -70,7 +72,6 @@ def cargarColeccion():
         print(f"Archivo '{nombre}.json' no encontrado.")
     except Exception as e:
         print(f"Error al cargar la colección: {e}")
-
-    input("Presione Enter para continuar...")  
+    sc.pausar_pantalla()  
     sc.limpiarPantalla()  
     print("Colección cargada correctamente.")

@@ -7,9 +7,9 @@ from app.config import AGREGARELEMENTO
 def editarElemento():
     while True:
         sc.limpiarPantalla()
-        print("========================================")
-        print("         Editar un Elemento ")
-        print("========================================")
+        print("=================================================")
+        print("               Editar un Elemento ")
+        print("=================================================")
 
         coleccion = readJson(AGREGARELEMENTO)
         if not coleccion:
@@ -17,10 +17,10 @@ def editarElemento():
             sc.pausar_pantalla()
             return
 
-        titulo_buscar = input("Ingrese el Título del elemento que desea editar: ").strip().lower()
+        tituloBuscar = input("Ingrese el Título del elemento que desea editar: ").strip().lower()
         encontrado = None
         for i, e in enumerate(coleccion):
-            if titulo_buscar in e["titulo"].lower():
+            if tituloBuscar in e["titulo"].lower():
                 encontrado = (i, e)
                 break
 
@@ -71,9 +71,9 @@ def editarElemento():
                         elemento["genero"] = nuevo
                 case "4":
                     try:
-                        nueva_val = float(input("Nueva Valoración (0.0 - 5.0): ").strip())
-                        if 0 <= nueva_val <= 5:
-                            elemento["valoracion"] = nueva_val
+                        nuevaValoracion = float(input("Nueva Valoración (0.0 - 5.0): ").strip())
+                        if 0 <= nuevaValoracion <= 5:
+                            elemento["valoracion"] = nuevaValoracion
                         else:
                             print("Valoración fuera de rango.")
                     except ValueError:
