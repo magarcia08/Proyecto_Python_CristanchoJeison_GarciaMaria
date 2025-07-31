@@ -20,18 +20,18 @@ def buscarElemento():
 
         match buscOpcion:
             case "1":
-                _buscar_por("titulo", "Título")
+                buscarPor("titulo", "Título")
             case "2":
-                _buscar_por("autor", "Autor / Director / Artista")
+                buscarPor("autor", "Autor / Director / Artista")
             case "3":
-                _buscar_por("genero", "Género")
+                buscarPor("genero", "Género")
             case "0":
                 break
             case _:
                 print("Opción inválida.")
                 sc.pausar_pantalla()
 
-def _buscar_por(clave, etiqueta):
+def buscarPor(clave, etiqueta):
     sc.limpiarPantalla()
     coleccion = readJson(AGREGARELEMENTO)
 
@@ -55,7 +55,7 @@ def _buscar_por(clave, etiqueta):
             encontrados.append((e, autor_label))
 
     if not encontrados:
-        print("\n🔍 No se encontraron coincidencias.")
+        print("\nNo se encontraron coincidencias.")
     else:
         print(f"\n Resultados encontrados:\n")
         for i, (item, etiqueta_autor) in enumerate(encontrados, 1):

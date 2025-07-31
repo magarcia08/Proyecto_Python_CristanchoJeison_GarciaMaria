@@ -24,7 +24,7 @@ def eliminarElemento():
             break
 
         if opcion not in ("1", "2"):
-            print("⚠️ Opción inválida.")
+            print("Opción inválida.")
             sc.pausar_pantalla()
             continue
 
@@ -36,7 +36,7 @@ def eliminarElemento():
             filtrados = [e for e in elementos if str(e.get("id", "")).lower() == criterio]
 
         if not filtrados:
-            print("⚠️ No se encontró ningún elemento con ese criterio.")
+            print(" No se encontró ningún elemento con ese criterio.")
         else:
             for item in filtrados:
                 print(f"\n¿Deseas eliminar el siguiente elemento?\nTítulo: {item['titulo']}")
@@ -44,8 +44,8 @@ def eliminarElemento():
                 if confirmar == "s":
                     elementos.remove(item)
                     writeJson(AGREGARELEMENTO, elementos)
-                    print("✅ Elemento eliminado exitosamente.")
+                    print(" Elemento eliminado exitosamente.")
                 else:
-                    print("❌ Eliminación cancelada.")
+                    print("Eliminación cancelada.")
 
         sc.pausar_pantalla()
