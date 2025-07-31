@@ -1,0 +1,16 @@
+[
+    {
+        "tipo": "Película",
+        "titulo": "Rapidos y furiosos",
+        "autor": "Fan",
+        "genero": "Accion",
+        "valoracion": "10"
+    },
+    {
+        "tipo": "Música",
+        "titulo": "Urus blue",
+        "autor": "Bless",
+        "genero": "Regueton",
+        "valoracion": "9"
+    }
+]
