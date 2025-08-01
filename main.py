@@ -9,7 +9,7 @@ El menú principal ofrece opciones para gestionar la colección de manera eficie
 """
 
 import utils.screenControlers as sc
-from controllers import agregarElemento, verElementos, buscarElementos, editarElemento,eliminarElemento, gestorColecciones
+from controllers import agregarElemento, verElementos, buscarElementos, editarElemento,eliminarElemento, gestorColecciones, verElementosC
 
 def menuAdministrador():                                      
     while True:                                                   # Menú Principal
@@ -40,33 +40,7 @@ def menuAdministrador():
             case "5":                                                 # Menú de Opciones - Eliminar un Elemento
                 eliminarElemento.eliminarElemento()        # Llama a la función para eliminar un elemento
             case "6":                                                  # Menú de Opciones - Ver Elementos por Categoría
-                 while True:
-                    sc.limpiarPantalla()
-                    print("========================================")
-                    print("       Ver Elementos por Categoría ")
-                    print("========================================")
-                    print("¿Qué categoría deseas ver?")
-                    print("1. Ver Libros")
-                    print("2. Ver Películas")
-                    print("3. Ver Música")
-                    print("0. Regresar al menú principal")
-                    print("========================================")
-                    vereleOpcion = input("Seleccione una opción: ")
-
-                    match vereleOpcion:
-                        case "1":
-                            pass
-                        case "2":
-                            pass
-                        case "3":
-                            pass
-                        case "0":
-                            break
-                        case _:
-                            print("Opcion invalida.")        
-                        
-                    input("Presione para continuar. . . . ") 
-
+                verElementosC.verElementos()            # Llama a la función para ver elementos por categoría
             case "7":                                            #Menú de Opciones - Guardar y Cargar Colección
                 gestorColecciones.gestoresColeccion()
             case "0":

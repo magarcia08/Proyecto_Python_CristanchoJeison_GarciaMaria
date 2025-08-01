@@ -33,7 +33,7 @@ def verElementos():
 
         tipoBuscado, etiqueta_autor = tipo_info
         coleccion = readJson(AGREGARELEMENTO)
-        print(f"🔎 Buscando tipo: {tipoBuscado}")
+        print(f" Buscando tipo: {tipoBuscado}")
 
         filtrados = [e for e in coleccion if e["tipo"].lower() == tipoBuscado]
 
@@ -42,8 +42,5 @@ def verElementos():
         else:
             print(f"\n Lista de {tipoBuscado.capitalize()}s:\n")
             for i, item in enumerate(filtrados, 1):
-                print(f"{i}. Título: {item['titulo']}")
-                print(f"   {etiqueta_autor}: {item['autor']}")
-                print(f"   Género: {item['genero']}")
-                print(f"   Valoración: {item['valoracion']}\n")
+                print(f" Género: {item['genero']}  {i} \n")
         sc.pausar_pantalla()
