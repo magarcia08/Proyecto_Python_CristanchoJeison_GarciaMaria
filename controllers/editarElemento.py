@@ -1,5 +1,3 @@
-# controllers/editarElementos.py
-
 import utils.screenControlers as sc
 from utils.corefiles import readJson, writeJson
 from app.config import AGREGARELEMENTO
@@ -17,6 +15,11 @@ def editarElemento():
             sc.pausar_pantalla()
             return
 
+        print("Lista de elementos disponibles:\n")
+        for i, item in enumerate(coleccion, 1):
+            print(f"{i}. Título: {item.get('titulo', 'Desconocido')} | Tipo: {item.get('tipo', 'N/A')} | Autor: {item.get('autor', 'N/A')}")
+        print("\n-------------------------------------------------")
+
         tituloBuscar = input("Ingrese el Título del elemento que desea editar: ").strip().lower()
         encontrado = None
         for i, e in enumerate(coleccion):
@@ -25,7 +28,7 @@ def editarElemento():
                 break
 
         if not encontrado:
-            print("\n No se encontro el elemento.")
+            print("\n No se encontró el elemento.")
             sc.pausar_pantalla()
             return
 
@@ -83,7 +86,6 @@ def editarElemento():
                 case _:
                     print("Opción no válida.")
             
-        
             coleccion[index] = elemento
             writeJson(AGREGARELEMENTO, coleccion)
             print("\n Cambios guardados.")
