@@ -2,6 +2,7 @@ import utils.screenControlers as sc
 from utils.corefiles import readJson
 from app.config import AGREGARELEMENTO
 
+
 def verElementos():
     while True:
         sc.limpiarPantalla()
